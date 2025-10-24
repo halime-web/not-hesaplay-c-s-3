@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vize–Final/Bütünleme</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="butunlemeKontrol()">
+    <h2>Not Hesaplama</h2>
+    <p>KBÜ Not Hesaplayıcı (Vize–Final/Bütünleme) – JavaScript ile</p>
+    <form id="notForm" onsubmit="hesapla(); return false;">
+      <label for="vize"> Vize Notu: </label>
+      <input type="text" id="vize" />
+      <label for="yilici"> Yıl İçi Çalışma Puanı (opsiyonel): </label>
+      <input type="text" id="yilici" />
+      <label id="finallabel" for="final"> Final Notu: </label>
+      <input type="text" id="final" onchange="butunlemeKontrol()" />
+      <label for="butunleme"> Bütünleme Notu: </label>
+      <!--  (opsiyonel; girilirse final yerine kullan) -->
+      <input type="text" id="butunleme" oninput="butunlemeKontrol()" />
+      <div id="checkboxdiv">
+        <label for="devam"> Devam durumu: </label>
+        <input type="checkbox" id="devam" />
+      </div>
+      <div id="checkboxdiv">
+        <label for="sinavgirdin"> Genel/bütünleme sınavına girdim mi? </label>
+        <input type="checkbox" id="sinavgirdin" />
+      </div>
+      <!-- Evet/Hayır → Hayır ise F2 -->
+      <button type="submit">Notu Hesapla</button>
+      <button type="button" onclick="resetForm()">Sıfırla / Temizle</button>
+    </form>
+    <p id="uyari"></p>
+    <p id="basariNotu"></p>
+    <p id="toplamNot"></p>
+    <p id="durum"></p>
+    <p id="aciklama"></p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
